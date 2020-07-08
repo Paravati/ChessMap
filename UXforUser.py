@@ -6,19 +6,22 @@ import sys
 class Window(QMainWindow):
     def __init__(self):
         super().__init__()
+        self.initUI()
         self.connectSignalsAndSlots()
         self.show()
-        self.initUI()
 
     def initUI(self):
-        self.ui = Ui_MainWindow
-        # self.ui.setupUi(self, MainWindow)  -> not working setup ui - need to be fixed
+        self.ui = Ui_MainWindow()
+        self.ui.setupUi(self)
 
-# pushButton_1, pushButton_2, pushButton_3, pushButton_4
+# pushButton, pushButton_2, pushButton_3, pushButton_4, label_3, lcdNumber_2, label_2
     def connectSignalsAndSlots(self):
-        pass
+        self.ui.pushButton.clicked.connect(self.onClicked(self.ui.pushButton))
+        self.ui.pushButton_2.clicked.connect(self.onClicked(self.ui.pushButton_2))
+        self.ui.pushButton_3.clicked.connect(self.onClicked(self.ui.pushButton_3))
+        self.ui.pushButton_4.clicked.connect(self.onClicked(self.ui.pushButton_4))
 
-    def onClicked(self):
+    def onClicked(self, button):
         pass
 
 
