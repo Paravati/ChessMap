@@ -1,4 +1,4 @@
 import chess
 
-gameBoard = chess.Board()
-print(gameBoard)
+
+board = chess.Bitboard()
